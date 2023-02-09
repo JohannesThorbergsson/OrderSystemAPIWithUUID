@@ -1,4 +1,4 @@
-package de.neuefische.cgnjava222.ordersystem.shop;
+package de.neuefische.cgnjava222.ordersystem.shop.service;
 
 import de.neuefische.cgnjava222.ordersystem.shop.order.Order;
 import de.neuefische.cgnjava222.ordersystem.shop.order.OrderRepo;

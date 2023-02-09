@@ -5,7 +5,7 @@ import de.neuefische.cgnjava222.ordersystem.shop.product.Product;
 import java.util.List;
 
 public record Order(
-        int id,
+        String id,
         List<Product> products
 ) {
 }

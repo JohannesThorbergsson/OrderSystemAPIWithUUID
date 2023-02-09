@@ -1,9 +1,8 @@
 package de.neuefische.cgnjava222.ordersystem.shop;
 
 import de.neuefische.cgnjava222.ordersystem.shop.order.Order;
-import de.neuefische.cgnjava222.ordersystem.shop.order.OrderRepo;
 import de.neuefische.cgnjava222.ordersystem.shop.product.Product;
-import de.neuefische.cgnjava222.ordersystem.shop.product.ProductRepo;
+import de.neuefische.cgnjava222.ordersystem.shop.service.ShopService;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.*;
@@ -11,7 +10,7 @@ import java.util.*;
 @RestController
 @RequestMapping("/api")
 public class ShopController {
-    ShopService testService;
+    private final ShopService testService;
 
     public ShopController(ShopService testService) {
         this.testService = testService;
@@ -33,10 +32,11 @@ public class ShopController {
     public Order getOrder(@PathVariable int id){
         return testService.getOrder(id);
     }
-    @PostMapping("/orders/{id}")
-    public List<Order> postOrders (@RequestBody int[] orderArray, @PathVariable int id){
+
+    @PostMapping("/orders")
+    public List<Order> postOrders (@RequestBody int[] orderArray){
         Integer[] orders = Arrays.stream(orderArray).boxed().toArray(Integer[]::new);
-        testService.addOrder(id, new ArrayList<>(List.of(orders)));
+        testService.addOrder(new ArrayList<>(List.of(orders)));
         return testService.listOrders();
     }
 }
