@@ -13,12 +13,14 @@ import java.util.List;
 public class ShopService {
     private final ProductRepo productRepo;
     private final OrderRepo orderRepo;
+    private final IDService idService;
 
     public ShopService(
             ProductRepo productRepo,
-            OrderRepo orderRepo) {
+            OrderRepo orderRepo, IDService idService) {
         this.productRepo = productRepo;
         this.orderRepo = orderRepo;
+        this.idService = idService;
     }
 
     public Product getProduct(int id) {

@@ -21,7 +21,8 @@ class ShopServiceTest {
         //given
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderRepo();
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+        IDService idService = new IDService();
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
         //when
         Product actual = shopService.getProduct(2);
@@ -35,7 +36,8 @@ class ShopServiceTest {
         //given
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderRepo();
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+        IDService idService = new IDService();
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
         //when
         List<Product> actual = shopService.listProducts();
@@ -57,7 +59,8 @@ class ShopServiceTest {
         //given
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderRepo();
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+        IDService idService = new IDService();
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
         //when
         shopService.addOrder(List.of(1, 3, 4));
@@ -80,7 +83,8 @@ class ShopServiceTest {
         //given
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderRepo();
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+        IDService idService = new IDService();
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
 //        //when
 //        shopService.addOrder(List.of(1, 3, 4));
@@ -107,7 +111,8 @@ class ShopServiceTest {
         //given
         ProductRepo productRepo = new ProductRepo();
         OrderRepo orderRepo = new OrderRepo();
-        ShopService shopService = new ShopService(productRepo, orderRepo);
+        IDService idService = new IDService();
+        ShopService shopService = new ShopService(productRepo, orderRepo, idService);
 
         //when
         try {
